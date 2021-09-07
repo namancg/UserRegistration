@@ -10,6 +10,9 @@ public class UserRegistration {
 		System.out.println("ENTER YOUR LAST NAME");
 		String lastName=sc.next();
 		checkValidName(firstName,lastName);
+		System.out.println("ENTER YOUR EMAIL ID");
+		String emailId=sc.next();
+		checkValidEmail(emailId);
 	}
 	public static void checkValidName(String firstName, String lastName) 
 	{
@@ -31,6 +34,20 @@ public class UserRegistration {
 		}
 		else
 			System.out.println("NOT A VALID LAST NAME");
+		
+	}
+	public static void checkValidEmail(String email) 
+	{
+		String regexCheck= "^[a-zA-z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$";
+		Pattern pattern = Pattern.compile(regexCheck);
+		Matcher obj= pattern.matcher(email);
+		if(obj.matches()==true)
+		{
+		System.out.println("THIS IS A VALID EMAIL");
+			
+		}
+		else
+			System.out.println("NOT A VALID EMAIL");
 		
 	}
 
