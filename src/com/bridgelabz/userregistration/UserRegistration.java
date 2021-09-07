@@ -19,6 +19,53 @@ public class UserRegistration {
 		System.out.println("ENTER PASSWORD");
 		String password=sc.next();
 		checkValidPassword(password);
+		System.out.println("\nEMAIL SAMPLES PROVIDED IS TO BE CHECKED");
+		emailId = "abc@bridgelabz.co.in";
+		checkValidEmail(emailId);
+		emailId = "abc@bbridgelabz.com";
+		checkValidEmail(emailId);
+		emailId = "abc@bridgelabz.co.in";
+		checkValidEmail(emailId);
+		emailId = "abc@bridgelabz.com";
+		checkValidEmail(emailId);
+		emailId = "abc@yahoo.com";
+		checkValidEmail(emailId);
+		emailId = "abc@1.com";
+		checkValidEmail(emailId);
+		emailId = "abc-100@yahoo.com";
+		checkValidEmail(emailId);
+		emailId = "abc.100@yahoo.com";
+		checkValidEmail(emailId);
+		emailId = "abc111@abc.com";
+		checkValidEmail(emailId);
+		emailId = "abc-100@abc.net";
+		checkValidEmail(emailId);
+		emailId = "abc.100@abc.com.au";
+		checkValidEmail(emailId);
+		
+		
+		emailId = ".abc@abc.com";
+		checkValidEmail(emailId);
+		emailId = "abc@123@gmaila";
+		checkValidEmail(emailId);
+		emailId = "abc@abc@gmailcom";
+		checkValidEmail(emailId);
+		emailId = "abc123@gmaila";
+		checkValidEmail(emailId);
+		emailId = "abc";
+		checkValidEmail(emailId);
+		emailId = "abc..2002@gmail.com";
+		checkValidEmail(emailId);
+		emailId = "abc@abc@gmail.com";
+		checkValidEmail(emailId);
+		emailId = "abc()*@gmail.com";
+		checkValidEmail(emailId);
+		emailId = "abc@%*@gmail.com";
+		checkValidEmail(emailId);
+		emailId = "abc@gmail.com.1a";
+		checkValidEmail(emailId);
+		emailId = "abc@gmail.com.aa.au";
+		checkValidEmail(emailId);
 		
 	}
 	public static void checkValidName(String firstName, String lastName) 
@@ -28,19 +75,19 @@ public class UserRegistration {
 		Matcher obj= pattern.matcher(firstName);
 		if(obj.matches()==true)
 		{
-		System.out.println("THIS IS A VALID FIRST NAME");
+		System.out.println("THIS IS A VALID FIRST NAME\n");
 			
 		}
 		else
-			System.out.println("NOT A VALID FIRSTNAME");
+			System.out.println("NOT A VALID FIRSTNAME\n");
 		Matcher obj1= pattern.matcher(lastName);
 		if(obj1.matches()==true)
 		{
-		System.out.println("THIS IS A VALID LAST NAME");
+		System.out.println("THIS IS A VALID LAST NAME\n");
 			
 		}
 		else
-			System.out.println("NOT A VALID LAST NAME");
+			System.out.println("NOT A VALID LAST NAME\n");
 		
 	}
 	public static void checkValidEmail(String email) 
@@ -64,10 +111,10 @@ public class UserRegistration {
         Matcher Obj = pattern.matcher(mobileNumber);
         if(Obj.matches()==true)
         {
-			System.out.println(mobileNumber+" THIS IS A VALID PHONE NUMBER");
+			System.out.println(mobileNumber+" THIS IS A VALID PHONE NUMBER\n");
         }
 		else
-			System.out.println(mobileNumber+" THIS IS NOT A VALID PHONE NUMBER");
+			System.out.println(mobileNumber+" THIS IS NOT A VALID PHONE NUMBER\n");
 	}
 	public static void checkValidPassword(String password)
 	{
@@ -76,10 +123,10 @@ public class UserRegistration {
         Matcher Obj = pattern.matcher(password);
         if(Obj.matches()==true)
         {
-			System.out.println(password+" THIS IS A VALID PASSWORD");
+			System.out.println(password+" THIS IS A VALID PASSWORD\n");
         }
 		else
-			System.out.println(password+" THIS IS NOT A VALID PASSWORD");
+			System.out.println(password+" THIS IS NOT A VALID PASSWORD\n");
 	}
 
 }
