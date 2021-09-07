@@ -13,6 +13,9 @@ public class UserRegistration {
 		System.out.println("ENTER YOUR EMAIL ID");
 		String emailId=sc.next();
 		checkValidEmail(emailId);
+		System.out.println("ENTER YOUR MOBILE NUMBER");
+		String mobileNumber = sc.next();
+		checkValidMobileNumber(mobileNumber);
 	}
 	public static void checkValidName(String firstName, String lastName) 
 	{
@@ -49,6 +52,18 @@ public class UserRegistration {
 		else
 			System.out.println("NOT A VALID EMAIL");
 		
+	}
+public static void checkValidMobileNumber(String mobileNumber){
+		
+		String regexCheck = "(0|91)?[0-9][0-9]{9}";
+		Pattern pattern = Pattern.compile(regexCheck);
+        Matcher Obj = pattern.matcher(mobileNumber);
+        if(Obj.matches()==true)
+        {
+			System.out.println(mobileNumber+" is a Valid  Mobile Number\n");
+        }
+		else
+			System.out.println(mobileNumber+" is an Invalid Mobile Number");
 	}
 
 }
