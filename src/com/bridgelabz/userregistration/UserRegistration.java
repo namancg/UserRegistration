@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
-		System.out.println("ENTER YOUR FIRST NAME");
+		/*System.out.println("ENTER YOUR FIRST NAME");
 		String firstName= sc.next();
 		System.out.println("ENTER YOUR LAST NAME");
 		String lastName=sc.next();
@@ -15,7 +15,11 @@ public class UserRegistration {
 		checkValidEmail(emailId);
 		System.out.println("ENTER YOUR MOBILE NUMBER");
 		String mobileNumber = sc.next();
-		checkValidMobileNumber(mobileNumber);
+		checkValidMobileNumber(mobileNumber);*/
+		System.out.println("ENTER PASSWORD");
+		String password=sc.next();
+		checkValidPassword(password);
+		
 	}
 	public static void checkValidName(String firstName, String lastName) 
 	{
@@ -53,17 +57,29 @@ public class UserRegistration {
 			System.out.println("NOT A VALID EMAIL");
 		
 	}
-public static void checkValidMobileNumber(String mobileNumber){
+	public static void checkValidMobileNumber(String mobileNumber){
 		
 		String regexCheck = "(0|91)?[0-9][0-9]{9}";
 		Pattern pattern = Pattern.compile(regexCheck);
         Matcher Obj = pattern.matcher(mobileNumber);
         if(Obj.matches()==true)
         {
-			System.out.println(mobileNumber+" is a Valid  Mobile Number\n");
+			System.out.println(mobileNumber+" THIS IS A VALID PHONE NUMBER");
         }
 		else
-			System.out.println(mobileNumber+" is an Invalid Mobile Number");
+			System.out.println(mobileNumber+" THIS IS NOT A VALID PHONE NUMBER");
+	}
+	public static void checkValidPassword(String password)
+	{
+		String regexCheck = "[a-zA-Z0-9].{8,}";
+		Pattern pattern = Pattern.compile(regexCheck);
+        Matcher Obj = pattern.matcher(password);
+        if(Obj.matches()==true)
+        {
+			System.out.println(password+" THIS IS A VALID PASSWORD");
+        }
+		else
+			System.out.println(password+" THIS IS NOT A VALID PASSWORD");
 	}
 
 }
