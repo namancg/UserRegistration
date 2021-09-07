@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
-		/*System.out.println("ENTER YOUR FIRST NAME");
+		System.out.println("ENTER YOUR FIRST NAME");
 		String firstName= sc.next();
 		System.out.println("ENTER YOUR LAST NAME");
 		String lastName=sc.next();
@@ -15,7 +15,7 @@ public class UserRegistration {
 		checkValidEmail(emailId);
 		System.out.println("ENTER YOUR MOBILE NUMBER");
 		String mobileNumber = sc.next();
-		checkValidMobileNumber(mobileNumber);*/
+		checkValidMobileNumber(mobileNumber);
 		System.out.println("ENTER PASSWORD");
 		String password=sc.next();
 		checkValidPassword(password);
@@ -71,7 +71,7 @@ public class UserRegistration {
 	}
 	public static void checkValidPassword(String password)
 	{
-		String regexCheck = "[a-zA-Z0-9].{8,}";
+		String regexCheck = "(?=.*[A-Z])[a-zA-Z0-9].{8,}";
 		Pattern pattern = Pattern.compile(regexCheck);
         Matcher Obj = pattern.matcher(password);
         if(Obj.matches()==true)
